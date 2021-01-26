@@ -4,7 +4,8 @@ export const JobsContext = createContext();
 
 const JobsProvider = ({ children }) => {
   const [data, setData] = useState([]);
-  return <JobsContext.Provider value={{ data, setData }}>{children}</JobsContext.Provider>;
+  const [searchResults, setSearchResults] = useState();
+  return <JobsContext.Provider value={{ data, setData, searchResults, setSearchResults }}>{children}</JobsContext.Provider>;
 };
 
 export default JobsProvider;
