@@ -24,9 +24,11 @@ const JobDetailPage = () => {
       {currentData && (
         <div>
           <h2>{currentData.title}</h2>
-          <img src={currentData.company_logo} alt="Logotype" />
+          <Image src={currentData.company_logo} alt="Logotype" />
           <strong>{currentData.type}</strong>
-          <a href={currentData.company_url}>Apply Now!</a>
+          <a href={currentData.company_url} target="_blank">
+            Apply Now!
+          </a>
           <div dangerouslySetInnerHTML={{ __html: currentData.description }} />
         </div>
       )}
@@ -42,4 +44,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+`;
+
+const Image = styled.img`
+  max-width: 200px;
+  max-height: 100%;
 `;
