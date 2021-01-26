@@ -11,7 +11,7 @@ const SearchActionBar = ({ setSearchResults }) => {
   };
 
   const getJobs = () => {
-    const url = `https://jobs.github.com/positions.json?description=${replaceSpaces()}`;
+    const url = `https://us-central1-wands-2017.cloudfunctions.net/githubjobs?description=${replaceSpaces()}`;
     const searchHistory = data.find((item) => item.keyword === searchInput);
 
     if (searchHistory) {
